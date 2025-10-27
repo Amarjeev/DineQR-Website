@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion'
 
 import './index.css'
 import App from './App'
-import { GlobalProvider } from './Manager/src/useContext/GlobalContext'
+import { GlobalProvider } from './Manager/useContext/GlobalContext'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
