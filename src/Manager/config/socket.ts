@@ -20,7 +20,11 @@ interface ClientToServerEvents {
   }) => void
 }
 
-const SERVER_URL = 'http://localhost:5000'
+// ✅ Use Render in production, localhost in dev
+const SERVER_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:5000"
+    : "https://dineqr-backend-3.onrender.com/api/v1/";
 
 export const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io(
   SERVER_URL,
