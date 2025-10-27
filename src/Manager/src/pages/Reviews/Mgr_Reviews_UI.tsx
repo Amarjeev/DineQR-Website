@@ -1,4 +1,3 @@
-import React from 'react'
 import { Star, MessageSquare, Clock, Sparkles, Users, ChefHat } from 'lucide-react'
 
 const Mgr_reviews_UI: React.FC = () => {
