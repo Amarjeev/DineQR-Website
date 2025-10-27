@@ -115,7 +115,7 @@ function App() {
         <Route index element={<PageWrapper><Mgr_Add_Menu_Item_UI /></PageWrapper>} />
         <Route path="Add-menuItems" element={<PageWrapper><Mgr_Add_Menu_Item_UI /></PageWrapper>} />
         <Route path="profit" element={<PageWrapper><Mgr_ProfitAlertUI /></PageWrapper>} />
-         {/* <Route path="reviews" element={<PageWrapper><Mgr_reviews_UI /></PageWrapper>} /> */}
+         <Route path="reviews" element={<PageWrapper><Mgr_reviews_UI /></PageWrapper>} />
         <Route path="food/dishes" element={<PageWrapper><Mgr_Dish_Categories_UI /></PageWrapper>} />
         <Route path="food/category/:dishName" element={<PageWrapper><Mgr_Food_category_List_page /></PageWrapper>} />
          <Route path="food/order/:itemId" element={<PageWrapper><Mgr_Food_Detail_Page /></PageWrapper>} />
