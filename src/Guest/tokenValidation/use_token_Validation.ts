@@ -19,7 +19,7 @@ export const use_token_Validation = () => {
         navigate('/guest-dashboard', { replace: true })
       }
     } catch (error) {
-      navigate('/login', { replace: true })
+      navigate('/guest/login', { replace: true })
     }
   }
 
