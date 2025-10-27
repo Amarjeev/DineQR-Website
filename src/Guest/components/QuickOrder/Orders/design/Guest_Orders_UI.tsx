@@ -407,8 +407,8 @@ const Guest_Orders_UI: React.FC = () => {
                       !order.kitchOrderCancelation &&
                       !order.paymentStatus &&
                       order.orderAccepted && (
-                      <button
-                        onClick={()=>handlePayment(orderId)}
+                        <button
+                          onClick={() => handlePayment(orderId)}
                           className="
                             relative
                             w-full
