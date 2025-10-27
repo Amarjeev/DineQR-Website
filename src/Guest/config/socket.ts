@@ -3,6 +3,7 @@ import { createSocketConnection } from '../../utils/socketConnection'
 interface ServerToClientEvents {
   initialGuestOrders: (order: any) => void
   updateGuestOrders: (orders: any) => void
+  updatePaymentStatusOrder: (orderId: string) => void
   initialGuestNotifications: (orders: any) => void
   guestNewNotifications: (orders: any) => void
   [event: string]: (...args: any[]) => void

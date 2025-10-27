@@ -45,7 +45,7 @@ export const use_get_Orders = () => {
   useEffect(() => {
     const userId = sessionStorage.getItem('guest-userId') || ''
     const hotelKey = sessionStorage.getItem('hotelKey') || ''
-    
+
     // Exit if required identifiers are missing
     if (!userId || !hotelKey) return
 
@@ -56,7 +56,7 @@ export const use_get_Orders = () => {
     const handleUpdate = (updatedOrders: any) => {
       // setOrders(updatedOrders)
       console.log('live updates :', updatedOrders)
-      
+
       // Update orders state by replacing existing order with updated version
       setOrders((prevOrders) => {
         // Remove old version of this order (if exists)
@@ -68,12 +68,25 @@ export const use_get_Orders = () => {
       })
     }
 
+
+    const handleUpdatePaymentStatus = (orderId: string) => {
+      setOrders((prevOrders) =>
+        prevOrders.map((order) =>
+          order.orderId === orderId
+            ? { ...order, paymentStatus: true }
+            : order
+        )
+      )
+    }
+
     // Subscribe to order update events
     socket.on('updateGuestOrders', handleUpdate)
+    socket.on('updatePaymentStatusOrder', handleUpdatePaymentStatus)
 
     // Cleanup: Unsubscribe from socket events when component unmounts
     return () => {
       socket.off('updateGuestOrders', handleUpdate)
+      socket.off('updatePaymentStatusOrder', handleUpdate)
     }
   }, []) // Empty dependency array - effect runs only on mount/unmount
 
