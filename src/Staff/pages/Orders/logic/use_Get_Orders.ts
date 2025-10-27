@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { socket } from '../../../config/Socket'
 import { showError } from '../../../utils/toast'
-import { type Status } from '../../../../../ServerErrorUI/ServerError_UI'
+import { type Status } from '../../../../ServerErrorUI/ServerError_UI'
 
 
 // ============================================================================

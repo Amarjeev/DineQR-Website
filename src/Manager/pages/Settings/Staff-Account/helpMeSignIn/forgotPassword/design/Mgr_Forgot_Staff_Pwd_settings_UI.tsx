@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { KeyRound, Hash } from 'lucide-react'
 import { use_Reset_Pwd } from '../logic/use_Reset_Pwd'
-import ServerError_UI from '../../../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../../../ServerErrorUI/ServerError_UI'
 
 const Mgr_Forgot_Staff_Pwd_settings_UI: React.FC = () => {
   const { staffId: paramStaffId, name } = useParams<{

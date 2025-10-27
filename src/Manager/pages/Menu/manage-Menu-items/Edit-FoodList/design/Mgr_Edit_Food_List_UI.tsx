@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Blurhash } from 'react-blurhash'
 import { use_Get_Menu_Items } from '../logic/use_Get_Menu_Items'
-import ServerError_UI from '../../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
 
 const Mgr_Edit_Food_List_UI: React.FC = () => {
   const navigate = useNavigate()

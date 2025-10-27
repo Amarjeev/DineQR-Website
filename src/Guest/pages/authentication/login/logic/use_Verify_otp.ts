@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { showError, showMessage } from '../../../../utils/toast'
 import { useNavigate } from 'react-router-dom'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 /**
  * ============================================================

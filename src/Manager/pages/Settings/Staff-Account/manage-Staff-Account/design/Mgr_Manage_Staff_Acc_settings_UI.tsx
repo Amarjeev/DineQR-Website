@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { use_Get_Staff_Acc } from '../logic/use_Get_Staff_Acc'
 import Loading from '../../../../../components/Loading/Mgr_Loading'
-import ServerError_UI from '../../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
 import { Link } from 'react-router-dom'
 
 const Mgr_Manage_Staff_Acc_settings_UI: React.FC = () => {

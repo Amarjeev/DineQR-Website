@@ -3,7 +3,7 @@ import { User, KeyRound, Hash } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Loading from '../../../../../components/Loading/Mgr_Loading'
 import { use_Create_Staff_Acc } from '../logic/use_Create_Staff_Acc'
-import ServerError_UI from '../../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
 
 const Mgr_Create_Staff_Acc_settings_UI: React.FC = () => {
   const {

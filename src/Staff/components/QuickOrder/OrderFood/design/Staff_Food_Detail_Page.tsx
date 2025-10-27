@@ -12,7 +12,7 @@ import {
 } from 'lucide-react'
 import Loading from '../../../Loading/Staff_Loading'
 import { use_Food_Detail_Logic, type Portion } from './use_Food_Detail_Logic'
-import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../ServerErrorUI/ServerError_UI'
 
 const Staff_Food_Detail_Page: React.FC = () => {
   const navigate = useNavigate()

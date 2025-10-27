@@ -2,7 +2,7 @@ import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { use_Mgr_Edit_Table_logic } from './use_Mgr_Edit_Table_logic'
 import Loading from '../../../../components/Loading/Mgr_Loading'
-import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../ServerErrorUI/ServerError_UI'
 
 const Mgr_Edit_Table_UI: React.FC = () => {
   const {

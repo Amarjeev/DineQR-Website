@@ -10,7 +10,7 @@ import {
   Clock,
 } from 'lucide-react'
 import Loading from '../../../Loading/Guest_Loading'
-import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../ServerErrorUI/ServerError_UI'
 import { use_Food_Detail_Logic, type Portion } from './use_Food_Detail_Logic'
 
 const Guest_Food_Detail_Page: React.FC = () => {

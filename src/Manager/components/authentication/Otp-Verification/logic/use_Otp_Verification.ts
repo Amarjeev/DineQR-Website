@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { showError } from '../../../../utils/toast'
 import axios, { isAxiosError } from 'axios'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 /**
  * Custom hook for managing OTP verification and resending for manager login

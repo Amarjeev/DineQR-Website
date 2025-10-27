@@ -2,7 +2,7 @@ import { User, Mail, Phone, Globe, MapPin } from 'lucide-react'
 import { use_HotelInfo } from '../logic/use_HotelInfo'
 import Loading from '../../../../components/Loading/Mgr_Loading'
 import { useEffect } from 'react'
-import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../ServerErrorUI/ServerError_UI'
 
 const Mgr_HotelInfo_settings_UI: React.FC = () => {
   const {

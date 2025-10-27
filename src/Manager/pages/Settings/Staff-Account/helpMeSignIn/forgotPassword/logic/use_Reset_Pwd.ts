@@ -3,9 +3,9 @@ import { Staff_Acc_Validation } from '../../../create-Account/validation/Staff_A
 import {type StaffValidationErrors } from '../../../create-Account/validation/Staff_Acc_Validation'
 import axios from 'axios'
 import { showSuccess } from '../../../../../../utils/toast'
-import { type Status } from '../../../../../../../../ServerErrorUI/ServerError_UI'
+import { type Status } from '../../../../../../../ServerErrorUI/ServerError_UI'
 import { useNavigate } from 'react-router-dom'
-import { BaseUrl } from '../../../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../../../BaseUrl/BaseUrl'
 
 export const use_Reset_Pwd = () => {
   const navigate = useNavigate()

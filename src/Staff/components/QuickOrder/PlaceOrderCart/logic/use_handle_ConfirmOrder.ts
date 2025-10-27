@@ -2,8 +2,8 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { showSuccess } from '../../../../utils/toast'
 import localforage from 'localforage'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
-import { type Status } from '../../../../../../ServerErrorUI/ServerError_UI'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
+import { type Status } from '../../../../../ServerErrorUI/ServerError_UI'
 
 // Type for validation errors
 type OrderFormErrors = {

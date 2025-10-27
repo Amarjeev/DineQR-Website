@@ -3,9 +3,9 @@ import { Validate_Bill } from '../../Create-Bill/Validation/Validate_Bill'
 import { type BillErrors } from '../../Create-Bill/Validation/Validate_Bill'
 import {type BillData } from '../../Create-Bill/Validation/Validate_Bill'
 import axios from 'axios'
-import { type Status } from '../../../../../../ServerErrorUI/ServerError_UI'
+import { type Status } from '../../../../../ServerErrorUI/ServerError_UI'
 import { showSuccess } from '../../../../utils/toast'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 // Custom hook to manage bill editing logic for manager
 export const use_Edit_Bill = () => {

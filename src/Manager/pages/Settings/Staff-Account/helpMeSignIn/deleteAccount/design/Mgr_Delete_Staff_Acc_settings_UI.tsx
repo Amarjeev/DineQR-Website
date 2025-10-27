@@ -2,7 +2,7 @@ import { KeyRound, Mail, Hash, User } from 'lucide-react'
 import { useParams } from 'react-router-dom'
 import { use_Del_Staff_Acc } from '../logic/use_Del_Staff_Acc'
 import { useEffect } from 'react'
-import ServerError_UI from '../../../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../../../ServerErrorUI/ServerError_UI'
 
 const Mgr_Delete_Staff_Acc_settings_UI: React.FC = () => {
   const { staffId: paramStaffId, name } = useParams<{

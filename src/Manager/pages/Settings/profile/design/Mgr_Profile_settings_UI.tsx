@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { User, Mail, Phone, Lock } from 'lucide-react'
 import { use_Profile } from '../logic/use_Profile'
 import Loading from '../../../../components/Loading/Mgr_Loading'
-import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../ServerErrorUI/ServerError_UI'
 
 const Mgr_Profile_settings_UI: React.FC = () => {
   const [showPasswordFields, setShowPasswordFields] = useState(false)

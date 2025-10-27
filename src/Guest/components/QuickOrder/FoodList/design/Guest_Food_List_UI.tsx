@@ -5,7 +5,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import { ChefHat, Star, Clock, ShoppingBag } from 'lucide-react'
 import { use_Get_Food_List } from './../logic/use_Get_Food_List'
 import Loading from '../../../Loading/Guest_Loading'
-import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../ServerErrorUI/ServerError_UI'
 
 /**
  * Food_List_UI Component

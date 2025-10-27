@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { type Status } from '../../../../../../../ServerErrorUI/ServerError_UI'
-import { BaseUrl } from '../../../../../../../BaseUrl/BaseUrl'
+import { type Status } from '../../../../../../ServerErrorUI/ServerError_UI'
+import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
 
 // ✅ Type for menu items
 export interface MenuItem {

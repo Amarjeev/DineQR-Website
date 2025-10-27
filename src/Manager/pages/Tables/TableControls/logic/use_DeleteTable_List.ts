@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 import { showError, showSuccess } from '../../../../utils/toast'
 
 // ✅ Custom hook for deleting a table

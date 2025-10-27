@@ -1,8 +1,8 @@
 import { useState, useCallback } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import { type Status } from '../../../../../../ServerErrorUI/ServerError_UI'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { type Status } from '../../../../../ServerErrorUI/ServerError_UI'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 /**
  * Type representing a single food item

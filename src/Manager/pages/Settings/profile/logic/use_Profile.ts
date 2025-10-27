@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { Profile_Validation } from '../validation/Profile_Validation'
 import { type ProfileData } from '../validation/Profile_Validation'
 import { showSuccess } from '../../../../utils/toast'
-import { type Status } from '../../../../../../ServerErrorUI/ServerError_UI'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { type Status } from '../../../../../ServerErrorUI/ServerError_UI'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 export const use_Profile = () => {
   // ✅ Single useState to collect all fields

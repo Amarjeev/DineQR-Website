@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { BaseUrl } from '../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../BaseUrl/BaseUrl'
 
 export const use_token_Validation = () => {
   const navigate = useNavigate()

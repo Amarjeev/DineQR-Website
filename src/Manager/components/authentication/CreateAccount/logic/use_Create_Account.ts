@@ -13,7 +13,7 @@ import { useState, useEffect } from 'react'
 import { createAccountSchema } from './create_AccountSchema'
 import { showSuccess, showError } from '../../../../utils/toast'
 import axios, { isAxiosError } from 'axios'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 // ----------------------
 // Types

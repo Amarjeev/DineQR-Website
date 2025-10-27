@@ -4,7 +4,7 @@ import { use_Delete_Bill } from '../logic/use_Delete_Bill'
 import { use_Edit_Bill } from '../logic/use_Edit_Bill'
 import { type BillData } from '../../Create-Bill/Validation/Validate_Bill'
 import { use_Get_Bill } from '../logic/use_Get_Bill'
-import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../ServerErrorUI/ServerError_UI'
 
 const Mgr_Edit_Bill_UI: React.FC = () => {
   // Type definition for the result returned by fetch operation

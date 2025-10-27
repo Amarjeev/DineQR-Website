@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import {BaseUrl} from "../../../../../../BaseUrl/BaseUrl"
+import {BaseUrl} from "../../../../../BaseUrl/BaseUrl"
 import { showError } from '../../../../utils/toast'
 import localforage from 'localforage'
-import { type Status } from '../../../../../../ServerErrorUI/ServerError_UI'
+import { type Status } from '../../../../../ServerErrorUI/ServerError_UI'
 
 export interface FoodItem {
   _id: string

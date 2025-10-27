@@ -12,7 +12,7 @@ import {
 } from 'lucide-react'
 import Mgr_Loading from '../../../Loading/Mgr_Loading'
 import { use_Food_Detail_Logic, type Portion } from './use_Food_Detail_Logic'
-import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../ServerErrorUI/ServerError_UI'
 
 const Mgr_Food_Detail_Page: React.FC = () => {
   const navigate = useNavigate()

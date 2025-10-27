@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 // Custom hook to fetch bill data for the manager
 export const use_Get_Bill = () => {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { showError, showSuccess } from '../../../utils/toast'
-import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../BaseUrl/BaseUrl'
 
 // ============================================================================
 // 🎯 TYPE DEFINITIONS

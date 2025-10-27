@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { showError, showMessage } from '../../../../utils/toast'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 /**
  * ============================================================

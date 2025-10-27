@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios, { isAxiosError } from 'axios'
 import { showError } from '../../../../utils/toast'
 import { useNavigate } from 'react-router-dom'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 /**
  * Custom Hook: useLoginAccount

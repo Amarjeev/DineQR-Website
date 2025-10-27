@@ -9,7 +9,7 @@ import {
   ShoppingBag,
 } from 'lucide-react'
 import { Blurhash } from 'react-blurhash'
-import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../ServerErrorUI/ServerError_UI'
 import { use_PlaceOrder_Cart_Logic } from './use_PlaceOrder_Cart_Logic'
 
 const PlaceOrder_Cart_Page: React.FC = () => {

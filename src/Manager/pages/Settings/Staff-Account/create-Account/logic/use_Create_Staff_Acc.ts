@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { Staff_Acc_Validation } from '../validation/Staff_Acc_Validation'
 import { type StaffValidationErrors } from '../validation/Staff_Acc_Validation'
 import axios from 'axios'
-import { type Status } from '../../../../../../../ServerErrorUI/ServerError_UI'
+import { type Status } from '../../../../../../ServerErrorUI/ServerError_UI'
 import { showSuccess } from '../../../../../utils/toast'
-import { BaseUrl } from '../../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
 
 export const use_Create_Staff_Acc = () => {
   const [formData, setFormData] = useState({

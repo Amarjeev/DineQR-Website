@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { type Status } from '../../../../../../../ServerErrorUI/ServerError_UI'
-import { BaseUrl } from '../../../../../../../BaseUrl/BaseUrl'
+import { type Status } from '../../../../../../ServerErrorUI/ServerError_UI'
+import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
 
 interface StaffAccount {
   staffId: string

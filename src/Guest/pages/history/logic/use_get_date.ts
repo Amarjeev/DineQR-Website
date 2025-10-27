@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { showError } from "../../../utils/toast";
-import { BaseUrl } from "../../../../../BaseUrl/BaseUrl";
+import { BaseUrl } from "../../../../BaseUrl/BaseUrl";
 
 // 🧩 Optional Type for Order
 interface OrderDate {

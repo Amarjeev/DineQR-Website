@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { type Status } from '../../../../../../ServerErrorUI/ServerError_UI'
+import { type Status } from '../../../../../ServerErrorUI/ServerError_UI'
 import { useState } from 'react'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 
 export const use_Logout = () => {

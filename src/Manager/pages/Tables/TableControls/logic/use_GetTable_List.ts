@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 export const use_GetTable_List = () => {
   // State to store table names array

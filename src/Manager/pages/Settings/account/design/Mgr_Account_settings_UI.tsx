@@ -3,7 +3,7 @@ import { LogOut, Trash2, AlertTriangle } from 'lucide-react'
 import Delete_Confir_Form_UI from '../Delete-Confirm-Form-UI/Mgr_Delete_Confir_Form_UI'
 import Loading from '../../../../components/Loading/Mgr_Loading'
 import { use_Logout } from '../logic/use_Logout'
-import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../ServerErrorUI/ServerError_UI'
 
 const Mgr_Account_settings_UI: React.FC = () => {
   const { handleLogout, status } = use_Logout()

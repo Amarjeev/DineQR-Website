@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { showError, showSuccess } from '../../../../../utils/toast'
-import { type Status } from '../../../../../../../ServerErrorUI/ServerError_UI'
-import { BaseUrl } from '../../../../../../../BaseUrl/BaseUrl'
+import { type Status } from '../../../../../../ServerErrorUI/ServerError_UI'
+import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
 
 /**
  * Hook: useMgrTableform

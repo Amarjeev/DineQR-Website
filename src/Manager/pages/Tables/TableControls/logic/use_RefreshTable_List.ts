@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 import { showError } from '../../../../utils/toast'
 
 // ✅ Custom hook for refreshing table list

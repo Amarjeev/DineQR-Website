@@ -3,8 +3,8 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { showError } from '../../../../utils/toast'
 import localforage from 'localforage'
-import { type Status } from '../../../../../../ServerErrorUI/ServerError_UI'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { type Status } from '../../../../../ServerErrorUI/ServerError_UI'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 
 export interface FoodItem {

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import localforage from 'localforage'
 import axios from 'axios'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 /** Interface defining the structure of portion details in a cart item */
 interface PortionDetail {

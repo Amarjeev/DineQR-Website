@@ -2,7 +2,7 @@ import { useState, useEffect, type ChangeEvent } from 'react'
 import { showError, showSuccess } from '../../../../utils/toast'
 import { useNavigate } from 'react-router-dom'
 import axios, { isAxiosError } from 'axios'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 export const use_Forgot_Password = () => {
   const navigate = useNavigate()

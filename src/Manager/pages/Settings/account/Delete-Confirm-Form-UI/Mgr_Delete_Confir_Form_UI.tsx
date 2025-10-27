@@ -1,4 +1,4 @@
-import ServerError_UI from '../../../../../../ServerErrorUI/ServerError_UI'
+import ServerError_UI from '../../../../../ServerErrorUI/ServerError_UI'
 import { use_Mgr_Delete_Account } from '../logic/use_Mgr_Delete_Account'
 
 interface Props {

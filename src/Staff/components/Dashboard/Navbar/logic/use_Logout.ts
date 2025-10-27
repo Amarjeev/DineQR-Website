@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {BaseUrl} from '../../../../../../BaseUrl/BaseUrl'
+import {BaseUrl} from '../../../../../BaseUrl/BaseUrl'
 import { useNavigate } from 'react-router-dom'
 import { showError } from '../../../../utils/toast'
 

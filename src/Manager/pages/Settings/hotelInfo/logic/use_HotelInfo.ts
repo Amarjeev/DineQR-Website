@@ -3,8 +3,8 @@ import { type HotelInfoForm } from '../validation/HotelInfo_Validation'
 import { HotelInfo_Validation } from '../validation/HotelInfo_Validation'
 import axios from 'axios'
 import { showSuccess } from '../../../../utils/toast'
-import { type Status } from '../../../../../../ServerErrorUI/ServerError_UI'
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { type Status } from '../../../../../ServerErrorUI/ServerError_UI'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 export const use_HotelInfo = () => {
   const [formData, setFormData] = useState<HotelInfoForm>({

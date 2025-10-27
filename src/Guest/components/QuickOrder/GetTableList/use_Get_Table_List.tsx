@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import axios from 'axios'
-import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../BaseUrl/BaseUrl'
 
 /**
  * Represents a table item in the restaurant

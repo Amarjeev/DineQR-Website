@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { showError } from '../../../../utils/toast'
 import { useNavigate } from "react-router-dom"
-import { BaseUrl } from '../../../../../../BaseUrl/BaseUrl'
+import { BaseUrl } from '../../../../../BaseUrl/BaseUrl'
 
 // Custom hook to handle deleting a bill for the manager
 export const use_Delete_Bill = () => {
