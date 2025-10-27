@@ -8,6 +8,7 @@ import Mgr_Create_Bill_UI from "./Manager/src/pages/Bill/Create-Bill/design/Mgr_
 import Mgr_Create_Staff_Acc_settings from "./Manager/src/pages/Settings/Staff-Account/create-Account/design/Mgr_Create_Staff_Acc_settings_UI";
 import Mgr_Create_Table_Page from "./Manager/src/pages/Tables/CreateTable/CreateTable-Page/Mgr_Create_Table_Page";
 import Mgr_Dashboard_Page from "./Manager/src/pages/Dashboard/Mgr-Dashboard-Page/Mgr_Dashboard_Page";
+import Mgr_reviews_UI from "./Manager/src/pages/Reviews/Mgr_reviews_UI";
 import Mgr_Delete_Staff_Acc_settings_UI from "./Manager/src/pages/Settings/Staff-Account/helpMeSignIn/deleteAccount/design/Mgr_Delete_Staff_Acc_settings_UI";
 import Mgr_Edit_Bill_UI from "./Manager/src/pages/Bill/Edit-Bill/design/Mgr_Edit_Bill_UI";
 import Mgr_Edit_Dish_Categories_UI from "./Manager/src/pages/Menu/manage-Menu-items/Edit-Dishes/Mgr_Edit_Dish_Categories_UI";
@@ -56,7 +57,7 @@ import Staff_Orders_Table_UI from "./Staff/src/pages/Orders/design/Staff_Orders_
 import Staff_Pending_Orders_Table_UI from "./Staff/src/pages/Pending/design/Staff_Pending_Orders_Table_UI";
 import Staff_PlaceOrder_Cart_Page from "./Staff/src/components/QuickOrder/PlaceOrderCart/design/Staff_PlaceOrder_Cart_Page";
 import Staff_Stock_Alert_Table_UI from "./Staff/src/pages/Stock-Alert/design/Staff_Stock_Alert_Table_UI";
-import Mgr_reviews_UI from "./Manager/src/pages/Reviews/Mgr_reviews_UI";
+
 
 // ==================================================
 // Animation Wrapper for Page Transitions

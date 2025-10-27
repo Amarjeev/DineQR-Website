@@ -5,7 +5,6 @@ import {
   List,
   ShoppingCart,
   Coffee,
-  Truck,
   MapPin,
   Bell,
   Clock,

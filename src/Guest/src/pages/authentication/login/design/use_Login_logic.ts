@@ -24,7 +24,7 @@ export const use_Login_logic = () => {
     return saved === 'otp' ? 'otp' : 'mobile'
   })
 
-  const [hotelKey, setHotelKey] = useState('68c016f89540bdb6226598f2')
+  const [hotelKey, _setHotelKey] = useState('68c016f89540bdb6226598f2')
 
   // 🔹 Persist step in sessionStorage
   useEffect(() => {
