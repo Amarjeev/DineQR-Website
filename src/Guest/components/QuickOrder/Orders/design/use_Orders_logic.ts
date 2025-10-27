@@ -103,7 +103,7 @@ export const use_Orders_logic = () => {
         icon: 'XCircle',
         type: 'cancelled' as OrderStatus,
       }
-    
+
     // Check kitchen cancellation status
     if (order.kitchOrderCancelation)
       return {
@@ -112,7 +112,7 @@ export const use_Orders_logic = () => {
         icon: 'XCircle',
         type: 'cancelled' as OrderStatus,
       }
-    
+
     // Check pending approval status
     if (!order.orderAccepted)
       return {
@@ -121,7 +121,7 @@ export const use_Orders_logic = () => {
         icon: 'Clock',
         type: 'pending' as OrderStatus,
       }
-    
+
     // Check cooking status
     if (order.orderAccepted && !order.orderDelivered)
       return {
@@ -130,7 +130,7 @@ export const use_Orders_logic = () => {
         icon: 'Loader',
         type: 'cooking' as OrderStatus,
       }
-    
+
     // Check delivered but unpaid status
     if (order.orderDelivered && !order.paymentStatus)
       return {
@@ -139,7 +139,7 @@ export const use_Orders_logic = () => {
         icon: 'CheckCircle',
         type: 'delivered' as OrderStatus,
       }
-    
+
     // Check completed payment status
     if (order.paymentStatus)
       return {
@@ -148,7 +148,7 @@ export const use_Orders_logic = () => {
         icon: 'CheckCircle',
         type: 'paid' as OrderStatus,
       }
-    
+
     // Default fallback status
     return {
       text: 'Unknown',
@@ -164,7 +164,8 @@ export const use_Orders_logic = () => {
   const calculateTotal = useCallback(
     (order: Order) =>
       order?.items?.reduce(
-        (sum, item) => sum + item?.portions?.reduce((s, p) => s + p?.subtotal, 0),
+        (sum, item) =>
+          sum + item?.portions?.reduce((s, p) => s + p?.subtotal, 0),
         0
       ),
     []
@@ -199,7 +200,7 @@ export const use_Orders_logic = () => {
    */
   const handleDelete = async (orderId: string | null) => {
     if (!orderId) return
-    
+
     // Find target order for validation
     const targetOrder = orders.find((order) => order.orderId === orderId)
 
@@ -207,15 +208,13 @@ export const use_Orders_logic = () => {
     if (
       targetOrder?.kitchOrderCancelation ||
       targetOrder?.orderAccepted ||
-      targetOrder?.orderDelivered ||
-      targetOrder?.paymentStatus
-    )
-      return
+      targetOrder?.orderDelivered
+    ) return
 
     setCancelLoading(true) // Show loading spinner during deletion
     const response = await handle_del_Order_ApiCall(orderId) // Call delete API
     setCancelLoading(false)
-    
+
     if (!response) return // Exit if API call failed
 
     // ✅ Remove the deleted order from local state immediately for instant UI update
@@ -245,7 +244,7 @@ export const use_Orders_logic = () => {
   const getTimeSinceOrder = useCallback((orderDate: string) => {
     const orderTime = new Date(orderDate).getTime()
     const diff = Math.floor((Date.now() - orderTime) / 60000) // Difference in minutes
-    
+
     if (diff < 1) return 'Just now'
     if (diff < 60) return `${diff}m ago`
     if (diff < 1440) return `${Math.floor(diff / 60)}h ago`
