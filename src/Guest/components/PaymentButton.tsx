@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { showError } from '../utils/toast'
 import { BaseUrl } from '../../BaseUrl/BaseUrl'
-import { use_get_Orders } from './QuickOrder/Orders/logic/use_get_Orders'
 
 declare global {
   interface Window {
@@ -12,7 +11,6 @@ declare global {
 // Function you can call from any component
 export const handlePayment = async (orderId: string) => {
   try {
-     const { handle_FetchOrders_ApiCall } = use_get_Orders()// To refresh orders after payment
     // Call backend to create Razorpay order
     const response = await axios.post(
       `${BaseUrl}guest/razopay/create-order/${orderId}`,
@@ -42,7 +40,6 @@ export const handlePayment = async (orderId: string) => {
 
     const rzp = new window.Razorpay(options)
     rzp.open()
-    handle_FetchOrders_ApiCall() // Refresh orders after payment
   } catch (error) {
     console.error('Payment error:', error)
     showError('Payment failed. Please try again.')
