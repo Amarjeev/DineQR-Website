@@ -202,15 +202,15 @@ export const use_Orders_logic = () => {
     if (!orderId) return
 
     // Find target order for validation
-    // const targetOrder = orders.find((order) => order.orderId === orderId)
+    const targetOrder = orders.find((order) => order.orderId === orderId)
 
     // Prevent deletion of orders that are cancelled, accepted, delivered, or paid
-    // if (
-    //   targetOrder?.kitchOrderCancelation ||
-    //   targetOrder?.orderAccepted ||
-    //   targetOrder?.orderDelivered ||
-    //   targetOrder?.paymentStatus
-    // )return
+    if (
+      targetOrder?.kitchOrderCancelation ||
+      targetOrder?.orderAccepted ||
+      targetOrder?.orderDelivered ||
+      targetOrder?.paymentStatus
+    )return
 
     setCancelLoading(true) // Show loading spinner during deletion
     const response = await handle_del_Order_ApiCall(orderId) // Call delete API

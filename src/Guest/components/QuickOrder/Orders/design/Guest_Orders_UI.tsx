@@ -193,6 +193,12 @@ const Guest_Orders_UI: React.FC = () => {
               order.orderDelivered ||
               order.paymentStatus === 'paid'
 
+            const hideDeleteButton =
+              order.kitchOrderCancelation ||
+              order.orderAccepted ||
+              order.orderDelivered ||
+              order.paymentStatus
+
             return (
               <div
                 key={orderId}
@@ -284,22 +290,24 @@ const Guest_Orders_UI: React.FC = () => {
                     )}
 
                     {/* Delete Order Button */}
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        setShowDeleteConfirm(orderId)
-                      }}
-                      className="
+                    {hideDeleteButton && (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          setShowDeleteConfirm(orderId)
+                        }}
+                        className="
                         flex items-center justify-center w-11 h-11 
                         rounded-lg transition-all duration-200
                         bg-gray-100 hover:bg-red-50 hover:text-red-600 
                         hover:shadow-md active:scale-95
                         text-gray-600 border border-gray-200 shadow-sm
                       "
-                      title="Delete Order"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
+                        title="Delete Order"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    )}
                   </div>
                 </div>
 
