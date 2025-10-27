@@ -1,4 +1,4 @@
-import { io, Socket } from 'socket.io-client'
+import { createSocketConnection } from '../../utils/socketConnection'
 
 interface ServerToClientEvents {
   newOrder: (order: any) => void
@@ -9,6 +9,7 @@ interface ServerToClientEvents {
   markReadNotifications: (notification: any) => void
   markReadNewNotification: (notification: any) => void
   orderDelivered: (orderId: any) => void
+  [event: string]: (...args: any[]) => void
 }
 
 interface ClientToServerEvents {
@@ -18,18 +19,11 @@ interface ClientToServerEvents {
     hotelKey: string
     staffUserId: string
   }) => void
+  [event: string]: (...args: any[]) => void
 }
 
-// ✅ Use Render in production, localhost in dev
-const SERVER_URL =
-  window.location.hostname === "localhost"
-    ? "http://localhost:5000"
-    : "https://dineqr-backend-3.onrender.com/api/v1/";
-
-export const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io(
-  SERVER_URL,
-  {
-    withCredentials: true,
-    extraHeaders: { 'my-custom-header': 'DineQR' },
-  }
-)
+// ✅ Create socket instance
+export const socket = createSocketConnection<
+  ServerToClientEvents,
+  ClientToServerEvents
+>()
