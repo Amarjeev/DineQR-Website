@@ -1,20 +1,38 @@
 import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import { use_Sumbit_MobNumber } from '../logic/use_Sumbit_MobNumber'
 import { use_Verify_otp } from '../logic/use_Verify_otp'
 import { use_token_Validation } from '../../../../tokenValidation/use_token_Validation'
-import { useNavigate } from 'react-router-dom'
 
 export const use_Login_logic = () => {
- const navigate = useNavigate()
+  const navigate = useNavigate()
+  const { hotelKey } = useParams<{ hotelKey: string }>()
   const { handle_Token_Validation } = use_token_Validation()
 
   // =========================
-  // Token Validation
+  // 🔹 Hotel Key Management
   // =========================
-  // Check if the staff is already logged in; redirect if valid
+  const [hotelId, setHotelId] = useState<string>(() => {
+    // Prefer URL param, then fallback to stored value
+    return hotelKey || sessionStorage.getItem('hotelKey') || ''
+  })
+
   useEffect(() => {
-    handle_Token_Validation('login','68c016f89540bdb6226598f2')
-  }, [navigate])
+    // If a new key is found in URL, persist it
+    if (hotelKey) {
+      sessionStorage.setItem('hotelKey', hotelKey)
+      setHotelId(hotelKey)
+    }
+  }, [hotelKey])
+
+  // =========================
+  // 🔹 Token Validation
+  // =========================
+  useEffect(() => {
+    if (hotelId) {
+      handle_Token_Validation('login', hotelId)
+    }
+  }, [hotelId, navigate])
 
   // =========================
   // 🔹 Step Management
@@ -24,9 +42,6 @@ export const use_Login_logic = () => {
     return saved === 'otp' ? 'otp' : 'mobile'
   })
 
-  const [hotelKey, _setHotelKey] = useState('68c016f89540bdb6226598f2')
-
-  // 🔹 Persist step in sessionStorage
   useEffect(() => {
     sessionStorage.setItem('login_step', step)
   }, [step])
@@ -39,7 +54,15 @@ export const use_Login_logic = () => {
     return savedMobile || ''
   })
 
-  // 🔹 Persist mobile number in sessionStorage
+  const [otp, setOtp] = useState(['', '', '', '', '', ''])
+  const [joinedOtp, setJoinedOtp] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+
+  const { handle_SubmitMobNumber_ApiCall } = use_Sumbit_MobNumber()
+  const { handle_VerifyOtp_ApiCall, otpError, setOtpError } = use_Verify_otp()
+
+  // Persist mobile
   useEffect(() => {
     if (mobile) {
       setError('')
@@ -49,14 +72,8 @@ export const use_Login_logic = () => {
     }
   }, [mobile])
 
-  const [otp, setOtp] = useState(['', '', '', '', '', ''])
-  const [joinedOtp, setJoinedOtp] = useState('')
-
-  const { handle_SubmitMobNumber_ApiCall } = use_Sumbit_MobNumber()
-  const { handle_VerifyOtp_ApiCall, otpError, setOtpError } = use_Verify_otp()
-
   // =========================
-  // 🔹 Timer & Loading/Error
+  // 🔹 Timer
   // =========================
   const [timeLeft, setTimeLeft] = useState(() => {
     const saved = sessionStorage.getItem('otp_timer_expiry')
@@ -65,19 +82,14 @@ export const use_Login_logic = () => {
       const diff = Math.floor((expiry - Date.now()) / 1000)
       return diff > 0 ? diff : 0
     }
-    return 180 // ⏰ Default OTP timer: 3 minutes (180 seconds)
+    return 180
   })
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
 
-  // =========================
-  // 🔹 Countdown Timer
-  // =========================
   useEffect(() => {
     if (step !== 'otp' || timeLeft <= 0) return
 
     const timer = setInterval(() => {
-      setTimeLeft((prev) => {
+      setTimeLeft(prev => {
         if (prev <= 1) {
           clearInterval(timer)
           setError('OTP expired')
@@ -91,7 +103,6 @@ export const use_Login_logic = () => {
     return () => clearInterval(timer)
   }, [step, timeLeft])
 
-  // 🔹 Store expiry time in sessionStorage when OTP step starts
   useEffect(() => {
     if (step === 'otp' && timeLeft === 180) {
       const expiry = Date.now() + timeLeft * 1000
@@ -99,9 +110,6 @@ export const use_Login_logic = () => {
     }
   }, [step])
 
-  // =========================
-  // 🔹 Format Timer
-  // =========================
   const formatTime = (seconds: number) => {
     const m = Math.floor(seconds / 60)
       .toString()
@@ -113,8 +121,6 @@ export const use_Login_logic = () => {
   // =========================
   // 🔹 Handlers
   // =========================
-
-  // 🔹 Handle mobile number submission and trigger OTP send
   const handleMobileSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -124,16 +130,16 @@ export const use_Login_logic = () => {
     }
 
     setLoading(true)
-    const response = await handle_SubmitMobNumber_ApiCall(mobile, hotelKey)
+    const response = await handle_SubmitMobNumber_ApiCall(mobile, hotelId)
+    setLoading(false)
+
     if (!response) return
 
     setStep('otp')
-    setTimeLeft(180) // ⏰ Reset OTP timer to 3 minutes
+    setTimeLeft(180)
     setError('')
-    setLoading(false)
   }
 
-  // 🔹 Handle OTP input changes
   const handleOtpChange = (index: number, value: string) => {
     if (/^\d?$/.test(value)) {
       const newOtp = [...otp]
@@ -143,37 +149,32 @@ export const use_Login_logic = () => {
 
       if (value && index < 5)
         document.getElementById(`otp-${index + 1}`)?.focus()
+
       if (error) setError('')
     }
   }
 
-  // 🔹 Verify OTP
   const handleVerifyOtp = async () => {
-    if (timeLeft <= 0) return
-    if (joinedOtp.length !== 6) return
+    if (timeLeft <= 0 || joinedOtp.length !== 6) return
 
-    const response = await handle_VerifyOtp_ApiCall(mobile, hotelKey, joinedOtp)
+    const response = await handle_VerifyOtp_ApiCall(mobile, hotelId, joinedOtp)
     if (!response) return
   }
 
-  // 🔹 Auto-verify when OTP is fully entered
   useEffect(() => {
-    if (joinedOtp.length === 6) {
-      handleVerifyOtp()
-    }
+    if (joinedOtp.length === 6) handleVerifyOtp()
   }, [joinedOtp])
 
-  // 🔹 Resend OTP
   const handleResendOtp = async () => {
     setLoading(true)
-
-    const response = await handle_SubmitMobNumber_ApiCall(mobile, hotelKey)
+    const response = await handle_SubmitMobNumber_ApiCall(mobile, hotelId)
     setLoading(false)
+
     if (!response) return
 
     setOtp(['', '', '', '', '', ''])
     setJoinedOtp('')
-    setTimeLeft(180) // ⏰ Reset timer to 3 minutes
+    setTimeLeft(180)
     setError('')
     setOtpError('')
   }

@@ -5,12 +5,12 @@ import { showError } from '../../../../utils/toast'
 const Mgr_QRcode_settings_UI: React.FC = () => {
   const qrRef = useRef<HTMLCanvasElement>(null)
 
-  let fetchedUserId = sessionStorage.getItem('manager-userId') || ''
-  if (!fetchedUserId) {
+  let hotelKey = sessionStorage.getItem('manager-userId') || ''
+  if (!hotelKey) {
     showError('Something went wrong, please try again')
   }
 
-  const websiteURL: string = 'https://dine-qr-website-vbdf.vercel.app/guest/login'
+  const websiteURL: string = `https://dine-qr-website-vbdf.vercel.app/guest/login/${hotelKey}`
 
   const handleDownload = () => {
     const canvas = qrRef.current

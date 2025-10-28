@@ -146,7 +146,7 @@ function App() {
       </Route>
 
       {/* ================= GUEST ROUTES ================= */}
-      <Route path="/guest/login" element={<Guest_Login_UI />} />
+      <Route path="/guest/login/:hotelKey" element={<Guest_Login_UI />} />
       <Route path="/guest-dashboard" element={<Guest_HomePage_UI />}>
         <Route index element={<PageWrapper><Guest_Dish_Categories_UI /></PageWrapper>} />
         <Route path="food/category/:dishName" element={<PageWrapper><Guest_Food_category_List_page /></PageWrapper>} />
