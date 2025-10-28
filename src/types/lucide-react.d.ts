@@ -1,5 +1,3 @@
-// src/types/lucide-react.d.ts
-
 declare module 'lucide-react' {
   import { ComponentType, SVGProps } from 'react'
 
@@ -46,6 +44,7 @@ declare module 'lucide-react' {
   export const Brain: ComponentType<LucideProps>
   export const Rocket: ComponentType<LucideProps>
   export const Zap: ComponentType<LucideProps>
+  export const FlaskConical: ComponentType<LucideProps>
 
   // 👤 User & Access
   export const User: ComponentType<LucideProps>
@@ -71,6 +70,7 @@ declare module 'lucide-react' {
   export const X: ComponentType<LucideProps>
   export const XCircle: ComponentType<LucideProps>
   export const Loader: ComponentType<LucideProps>
+  export const Loader2: ComponentType<LucideProps> // 🔥 added for loading spinner
   export const ChevronDown: ComponentType<LucideProps>
   export const ChevronUp: ComponentType<LucideProps>
   export const QrCode: ComponentType<LucideProps>

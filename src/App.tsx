@@ -57,6 +57,7 @@ import Staff_Orders_Table_UI from "./Staff/pages/Orders/design/Staff_Orders_Tabl
 import Staff_Pending_Orders_Table_UI from "./Staff/pages/Pending/design/Staff_Pending_Orders_Table_UI";
 import Staff_PlaceOrder_Cart_Page from "./Staff/components/QuickOrder/PlaceOrderCart/design/Staff_PlaceOrder_Cart_Page";
 import Staff_Stock_Alert_Table_UI from "./Staff/pages/Stock-Alert/design/Staff_Stock_Alert_Table_UI";
+import Guest_TrialMode from "./Guest/pages/authentication/login/design/Guest_TrialMode";
 
 
 // ==================================================
@@ -147,6 +148,7 @@ function App() {
 
       {/* ================= GUEST ROUTES ================= */}
       <Route path="/guest/login/:hotelKey" element={<Guest_Login_UI />} />
+       <Route path="/guest/trailmode" element={<Guest_TrialMode />} />
       <Route path="/guest-dashboard" element={<Guest_HomePage_UI />}>
         <Route index element={<PageWrapper><Guest_Dish_Categories_UI /></PageWrapper>} />
         <Route path="food/category/:dishName" element={<PageWrapper><Guest_Food_category_List_page /></PageWrapper>} />

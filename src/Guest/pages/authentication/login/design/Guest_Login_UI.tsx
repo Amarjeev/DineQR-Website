@@ -1,4 +1,6 @@
 import { use_Login_logic } from './use_Login_logic'
+import { FlaskConical } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Guest_Login_UI: React.FC = () => {
   // =========================
@@ -188,6 +190,20 @@ const Guest_Login_UI: React.FC = () => {
               )}
             </div>
           )}
+          {/* // =========================
+          // 🔹 Trial Mode Notice
+          // =========================' */}
+          <Link
+            to={'/guest/trailmode'}
+            className="inline-flex mt-2 items-center gap-2 px-4 py-2 rounded-full 
+                 bg-gradient-to-r from-cyan-600 to-blue-600 
+                 text-white font-semibold shadow-lg 
+                 hover:from-cyan-500 hover:to-blue-500 
+                 transition-all duration-300"
+          >
+            <FlaskConical size={18} />
+            Trial Mode
+          </Link>
 
           {/* Footer Text */}
           <p className="text-xs text-center text-gray-400 mt-6 relative z-10">
