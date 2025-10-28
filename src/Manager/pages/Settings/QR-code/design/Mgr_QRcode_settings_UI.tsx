@@ -10,7 +10,7 @@ const Mgr_QRcode_settings_UI: React.FC = () => {
     showError('Something went wrong, please try again')
   }
 
-  const websiteURL: string = `https://dine-qr-website-vbdf.vercel.app/guest/login/${hotelKey}`
+  const websiteURL: string = `https://dineqr.cfd/guest/login/${hotelKey}`
 
   const handleDownload = () => {
     const canvas = qrRef.current
