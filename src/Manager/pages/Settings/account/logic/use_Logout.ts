@@ -16,7 +16,7 @@ export const use_Logout = () => {
     try {
       setStatus('loading')
       await axios.post(
-        `${BaseUrl}manager/logout`,
+        `${BaseUrl}manager/Logout`,
         {},
         { withCredentials: true }
       )
