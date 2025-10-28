@@ -7,13 +7,11 @@ export const use_token_Validation = () => {
 
   // Function to validate staff token
   const handle_Token_Validation = async (status: string) => {
-    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
     try {
       // Make request to backend validation route with HttpOnly cookies
       const response = await axios.get(`${BaseUrl}manager/check-token/validate`, {
         withCredentials: true, // important to send cookies
       })
-console.log(response.data)
       // If token is invalid, redirect to staff dashboard/login
 
       if (status === 'login' && response?.data?.success) {

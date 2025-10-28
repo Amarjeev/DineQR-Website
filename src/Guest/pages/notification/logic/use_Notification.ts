@@ -6,7 +6,6 @@ export const use_Notification = () => {
   const [notifications, setNotifications] = useState<any[]>([])
 
     const handleUpdate = (newNotification: any) => {
-      console.log('live notification :',newNotification)
     // Append new notifications to existing state
     setNotifications(prev => [newNotification, ...prev])
   }
@@ -22,7 +21,6 @@ export const use_Notification = () => {
 
     // Listen for initial notifications
     socket.once("initialGuestNotifications", (data: any[]) => {
-      console.log('✅ Notifications fetched successfully:', data)
       setNotifications(data) // Store in state
     })
 

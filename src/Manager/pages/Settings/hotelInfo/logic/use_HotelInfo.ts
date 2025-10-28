@@ -51,8 +51,6 @@ export const use_HotelInfo = () => {
       if (axios.isAxiosError(error)) {
         setStatus('null')
         setStatus('error')
-        // Server returned an error
-        console.log(error.response)
       }
     }
   }
@@ -84,8 +82,6 @@ export const use_HotelInfo = () => {
 
       if (axios.isAxiosError(error)) {
         setStatus('error')
-        // Backend returned an error
-        console.log(error.response || 'Something went wrong.')
       }
     } finally {
       setIsUpdating(false)

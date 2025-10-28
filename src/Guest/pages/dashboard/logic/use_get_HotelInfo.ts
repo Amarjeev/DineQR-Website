@@ -39,10 +39,8 @@ export const use_Get_HotelInfo = () => {
     try {
       const response = await axios.get(`${BaseUrl}guest/get/Hotelinfo`,{withCredentials:true})
       setHotelInfo(response.data.data)
-      console.log('hotel iformation :',response.data.data)
       sessionStorage.setItem("hotelInfo", JSON.stringify(response.data.data))
     } catch (error: any) {
-      console.error("Error fetching hotel info:", error)
       showError("Something went wrong")
     }
   }

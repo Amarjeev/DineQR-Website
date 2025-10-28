@@ -67,7 +67,6 @@ export const use_Forgot_Password = () => {
             }
           }
         } catch (error) {
-          console.log('Error checking email:', error)
           showError('Something went wrong. Please try again.')
         }
       }

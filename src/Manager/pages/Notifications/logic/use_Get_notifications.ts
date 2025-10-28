@@ -53,7 +53,6 @@ export const use_Get_notifications = () => {
     
     // Handle initial batch of notifications from server
     socket.on('initialNotifications', (data: any[]) => {
-      console.log('📦 Initial notifications:', data)
       setNotifications(data || [])
     })
 
@@ -63,7 +62,6 @@ export const use_Get_notifications = () => {
     
     // Handle incoming real-time notifications
     socket.on('newNotification', (item: any) => {
-      console.log('🆕 New notification:', item)
       setNotifications((prev) => {
         // ✅ Avoid duplicates by checking ID
         if (prev.find((n) => (n._id || n.id) === (item._id || item.id))) {
@@ -79,7 +77,6 @@ export const use_Get_notifications = () => {
     
     // Handle batch mark-as-read operations
     socket.on('markReadNotifications', (item: any) => {
-      console.log('✅ Marked as read (batch):', item)
       setMarkReadNotifications(item)
     })
 
@@ -89,7 +86,6 @@ export const use_Get_notifications = () => {
     
     // Handle individual mark-as-read operations
     socket.on('markReadNewNotification', (item: any) => {
-      console.log('✅ Marked as read (single):', item)
       setMarkReadNotifications((prev) => {
         // Avoid duplicate entries in read notifications
         if (prev.find((n) => (n._id || n.id) === (item._id || item.id))) {
@@ -110,7 +106,6 @@ export const use_Get_notifications = () => {
       socket.off('newNotification')
       socket.off('markReadNotifications')
       socket.off('markReadNewNotification')
-      console.log('🧹 Socket listeners cleaned up')
     }
   }, []) // Empty dependency array ensures this runs only once
 

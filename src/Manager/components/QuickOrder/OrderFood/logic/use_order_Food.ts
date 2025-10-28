@@ -40,8 +40,6 @@ export const use_order_Food = () => {
         expiry: Date.now() + 8 * 60 * 60 * 1000 // 8 hours
       })
 
-      console.log('Updated cart:', updatedCart)
-
       // ✅ Success message
       showSuccess('Items successfully added to cart!')
     } catch (err) {

@@ -720,7 +720,6 @@ const Guest_Orders_UI: React.FC = () => {
                 </button>
                 <button
                   onClick={() => {
-                    console.log('Contact hotel staff')
                     setShowWarning(null)
                   }}
                   className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 font-medium transition-colors"

@@ -71,7 +71,6 @@ export const use_Create_Bill = () => {
       showSuccess('Bill created Suceesfully')
       return
     } catch (error: any) {
-      console.log(error)
       if (error.response.status === 409) {
         // Duplicate bill error
         setErrors((prev) => ({

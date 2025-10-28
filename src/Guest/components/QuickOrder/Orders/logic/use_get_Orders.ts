@@ -34,7 +34,6 @@ export const use_get_Orders = () => {
     socket.once('initialGuestOrders', (data: any) => {
       setOrders(data)
       setLoading(false)
-      // console.log('✅ Orders fetched successfully:', data)
     })
   }
 
@@ -54,8 +53,6 @@ export const use_get_Orders = () => {
      * @param updatedOrders - Updated order data from server
      */
     const handleUpdate = (updatedOrders: any) => {
-      // setOrders(updatedOrders)
-      console.log('live updates :', updatedOrders)
 
       // Update orders state by replacing existing order with updated version
       setOrders((prevOrders) => {

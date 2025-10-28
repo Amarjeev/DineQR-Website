@@ -194,7 +194,6 @@ export const use_Add_Menu_Item = () => {
           return navigate('/', { replace: true })
         }
         showError('Internal server error while adding menu item.')
-        console.log(error)
       }
     } finally {
       setUploadStatus(false)

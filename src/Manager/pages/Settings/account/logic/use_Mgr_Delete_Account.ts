@@ -53,8 +53,6 @@ export const use_Mgr_Delete_Account = () => {
       setIsPasswordCorrect(true)
       setError('')
     } catch (error: any) {
-      console.log(error)
-
       // check if axios error
       if (axios.isAxiosError(error)) {
         if (error.response?.status === 401) {
@@ -87,7 +85,6 @@ export const use_Mgr_Delete_Account = () => {
 
       navigate('/', { replace: true })
     } catch (error: any) {
-      console.log(error)
       // ✅ Handle error
       if (axios.isAxiosError(error)) {
         if (error.response?.status === 401) {

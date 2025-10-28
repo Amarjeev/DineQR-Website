@@ -63,9 +63,6 @@ export const use_Login_Account = () => {
             }
           }
         } catch (error: unknown) {
-          if (isAxiosError(error)) {
-            console.log('Error checking email:', error)
-          }
           showError('Something went wrong. Please try again.')
         }
       }

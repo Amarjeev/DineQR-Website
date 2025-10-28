@@ -117,7 +117,6 @@ if (action !== "upload") {
       // Error Handling
       // -------------------------
       if (axios.isAxiosError(error)) {
-        console.log(error.response)
         if (error.response) {
           switch (error.response.status) {
             case 400:

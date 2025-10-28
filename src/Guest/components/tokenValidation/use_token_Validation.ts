@@ -12,7 +12,6 @@ export const use_token_Validation = () => {
       const response = await axios.get(`${BaseUrl}guest/check-token/validate`, {
         withCredentials: true, // important to send cookies
       })
-console.log(response.data)
       // If token is invalid, redirect to staff dashboard/login
 
       if (status === 'login' && response?.data?.success) {
