@@ -26,7 +26,10 @@ const Mgr_Dash_Navbar_UI: React.FC = () => {
 
         {/* Right Buttons (Desktop) */}
         <div className="hidden md:flex items-center space-x-4">
-          <Link to={'/manager-dashboard/cart'} className="text-gray-700 hover:text-gray-900 transition font-medium text-3xl">
+          <Link
+            to={'/manager-dashboard/cart'}
+            className="text-gray-700 hover:text-gray-900 transition font-medium text-3xl"
+          >
             🛒
           </Link>
           <Link to="/settings">
@@ -51,12 +54,18 @@ const Mgr_Dash_Navbar_UI: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden px-6 pb-4 space-y-3 bg-white border-t border-gray-200 text-gray-700 font-medium">
           <div className="flex flex-col space-y-2 mt-3">
-            <Link to={'/manager-dashboard/cart'} className="text-gray-700 hover:text-gray-900 transition text-center">
+            <Link
+              to={'/manager-dashboard/cart'}
+              className="text-gray-700 hover:text-gray-900 transition text-center"
+            >
               🛒Orders
             </Link>
-            <button className="text-gray-700 hover:text-gray-900 transition text-center">
+            <Link
+              to="/settings"
+              className="text-gray-700 hover:text-gray-900 transition text-center"
+            >
               👤 Profile
-            </button>
+            </Link>
           </div>
         </div>
       )}
