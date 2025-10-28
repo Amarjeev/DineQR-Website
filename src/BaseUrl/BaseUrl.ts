@@ -1,9 +1,7 @@
-export const BaseUrl: string =
-  window.location.hostname === "localhost"
-    ? "http://localhost:5000/api/v1/"
-    : "https://dineqr-backend-3.onrender.com/api/v1/";
+// 🌍 API Base URL (Render Backend)
+export const BaseUrl: string = 'https://dineqr-backend-3.onrender.com/api/v1/'
+// export const BaseUrl: string = "http://localhost:4000/api/v1/";
 
-export const SocketUrl: string =
-  window.location.hostname === "localhost"
-    ? "http://localhost:5000"
-    : "https://dineqr-backend-3.onrender.com";
+// 🔌 Socket URL
+export const SocketUrl: string = 'https://dineqr-backend-3.onrender.com'
+// export const SocketUrl: string = "http://localhost:4000";
