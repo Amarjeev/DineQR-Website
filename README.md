@@ -1,69 +1,93 @@
-# React + TypeScript + Vite
+# 🍽️ DineQR — Complete Smart Restaurant Management System (Frontend + Backend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**DineQR** is a full-stack restaurant management and ordering system designed to make dining faster, contactless, and smarter — using **QR-based menus**, **real-time tracking**, **OTP authentication**, and **instant notifications**.
 
-Currently, two official plugins are available:
+Built with **React + TypeScript (Frontend)** and **Node.js + Express + TypeScript + MongoDB (Backend)**, DineQR connects **Guests, Staff, and Managers** seamlessly with **WebSocket-powered live updates**, **secure payments**, and **beautiful image handling with BlurHash**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Key Highlights
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📱 **QR Code Ordering** — Contactless menu ordering via table QR.
+- ⚡ **Real-time Updates** — Powered by Socket.IO for instant synchronization.
+- 🔐 **Mobile Number + OTP Login** — Simplified and secure user authentication.
+- 💬 **Live Notifications** — Guests and Staff receive real-time messages on every order change.
+- ✉️ **Live Email Updates** — Transactional emails sent via SendGrid on order status or payment events.
+- 💳 **Online / Offline Payments** — Supports payment gateway integration (Razorpay, Stripe).
+- 🌄 **BlurHash Image Optimization** — Beautiful image placeholders before full load.
+- 🧠 **Session Storage + LocalForage** — Persistent and reliable client-side caching.
+- 👥 **Multi-Role System** — Manager, Staff, and Guest with role-based dashboards.
+- 🧾 **Menu & Kitchen Management** — Full control of dishes, availability, and status.
+- ☁️ **Fully Deployed Setup** — Frontend (Netlify), Backend (Render), and DNS (Cloudflare).
+- 💬 **Socket.IO Events** — Bi-directional data flow between all users.
+- 🧩 **TypeScript Codebase** — Frontend & Backend with full type safety and modular design.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🧭 Real-World Workflow Overview
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+DineQR works through **three interconnected roles**, all communicating in real-time.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 👤 Guest (Customer)
+1. Scans the **table QR code**.
+2. Opens the **menu** directly in browser:  
+   👉 `https://dineqr.cfd/guest/login/<hotelKey>`
+3. Logs in using **mobile number + OTP verification**.
+4. Selects dishes, adds them to cart, and proceeds to checkout.
+5. Chooses payment option:
+   - 💳 **Online Payment** (via gateway)
+   - 💵 **Pay Later / Cash**
+6. Order confirmation triggers **live socket events** and **email notifications**.
+7. Guest sees **real-time status** — *Preparing → Ready → Served*.
+8. Can receive **in-app notifications** for updates or messages from staff.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 👨‍🍳 Staff (Kitchen / Service)
+1. Logs into **Staff Dashboard** using credentials or OTP.
+2. Instantly sees **new orders** via WebSocket.
+3. Updates order progress:
+   - Preparing → Ready → Served
+4. Each update notifies the **Guest** and **Manager** instantly through:
+   - 🔔 **Live in-app notification**
+   - ✉️ **Email trigger (optional)**
+5. Can manage tables and update dish availability.
+
+---
+
+### 👨‍💼 Manager (Admin / Owner)
+1. Monitors **all live orders**, staff performance, and revenues.
+2. Manages staff accounts, menu items, and prices.
+3. Tracks **online payments**, **refunds**, and **daily revenue summaries**.
+4. Receives **real-time alerts** when new orders are placed or completed.
+5. Can send **custom notifications or offers** to active guests.
+
+---
+
+## 🔄 Live Data Flow Diagram
+
+[ Guest Scans Table QR ]
+↓
+[ Opens Menu (React App) ]
+↓
+[ Mobile Number + OTP Login ]
+↓
+[ Adds Dishes to Cart ]
+↓
+[ Proceeds to Payment ]
+↓
+┌─────────────────────────────────────────────┐
+│ (Option A) Pay Online via Payment Gateway │
+│ (Option B) Pay Later / Cash on Delivery │
+└─────────────────────────────────────────────┘
+↓
+[ Order Confirmed → Sent to Backend API ]
+↓ (WebSocket Event + Email)
+[ Staff Dashboard: New Order Appears ]
+↓
+[ Staff Updates Status (Preparing → Ready) ]
+↓ (Socket.IO Sync + Notification)
+[ Guest App: Live Status Updated ]
+↓
+[ Manager Panel: Tracks Revenue + Activity ]
+
