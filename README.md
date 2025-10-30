@@ -65,7 +65,6 @@ DineQR works through **three interconnected roles**, all communicating in real-t
 ---
 
 ## 🔄 Live Data Flow Diagram
-## 🔄 Live Data Flow Diagram
 
 ```text
           ┌─────────────────────────────┐
