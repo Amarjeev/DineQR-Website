@@ -64,6 +64,10 @@ DineQR works through **three interconnected roles**, all communicating in real-t
 
 ---
 
+## 🌍 **Live Website**
+🔗 [https://www.dineqr.cfd](https://www.dineqr.cfd)
+
+
 ## 🔄 Live Data Flow Diagram
 
 ```text
